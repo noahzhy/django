@@ -1,3 +1,5 @@
-# Table of content
+# Summary
 
-* [First Chapter](chapter1.md)
+* [简介](README.md)
+* [安装 Django](chapter1.md)
+

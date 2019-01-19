@@ -1,4 +1,6 @@
 # Django笔记
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+这篇主要是记录我在学Django时候的一些学习过程。
+
+当时正在做一个项目，类似一个文件快传功能的FTP空间。考虑到以前学的框架都太老了，所以想学点新的东西。于是选择了学Django。
 
