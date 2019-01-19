@@ -61,4 +61,8 @@ def index(request):
     return HttpResponse(html)
 ```
 
+为了使我们的首页更加美观，插入了一张图片以及 Hello World! 的文字。
+
+效果如下：
+![ex](https://lision.me/ios_native_js/html5.png)
 
