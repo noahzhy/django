@@ -64,8 +64,6 @@ urlpatterns = [
 ]
 ```
 
-
-
 打开 **`index/views.py`**，把下面这些 Python 代码输入进去：
 ```py
 from django.http import HttpResponse
