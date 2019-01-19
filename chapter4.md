@@ -64,5 +64,5 @@ def index(request):
 为了使我们的首页更加美观，插入了一张图片以及 Hello World! 的文字。
 
 效果如下：
-<img style="width:256px;"src="https://lision.me/ios_native_js/html5.png"  alt="ex" />
+<img style="width:256px;" src="https://lision.me/ios_native_js/html5.png"  alt="ex" />
 <text>Hello World!</text>
