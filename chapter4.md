@@ -89,8 +89,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 ```
-
-最终效果如下：  
+打开 **`http://127.0.0.1:8000/`**，将会看到如下效果：  
 
 <img style="width:256px;" src="https://lision.me/ios_native_js/html5.png"  alt="ex" />
 <text>Hello World!</text>
