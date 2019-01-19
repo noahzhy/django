@@ -40,7 +40,7 @@ python manage.py runserver
 
 用浏览器访问 **`http://localhost:8000/myapp/`**，你应该能够看见 **Hello, world. You're at the myapp index.** ，这是你在 **index** 视图中定义的。
 
-## 首页
+## 创建首页
 
 通过上面的例子，我们不难发现 **`urlpatterns`** 负责将 URL 映射到我们需要的位置。
 
