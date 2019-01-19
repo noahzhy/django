@@ -39,3 +39,27 @@ python manage.py runserver
 ```
 
 用浏览器访问 **`http://localhost:8000/myapp/`**，你应该能够看见 **Hello, world. You're at the myapp index.** ，这是你在 **index** 视图中定义的。
+
+## 首页
+
+通过上面的例子，我们不难发现 **`urlpatterns`** 负责将 URL 映射到我们需要的位置。
+
+我们继续新建一个名为 index 的应用，方便我们管理 index 页。
+
+```shell
+python manage.py startapp index
+```
+
+同上面的步骤，我们给这个 index 编写视图，并且将 URL 映射到 index 上。
+
+打开 **`index/views.py`**，把下面这些 Python 代码输入进去：
+```py
+from django.http import HttpResponse
+
+def index(request):
+    html = '''<html><body><img style="width:256px;" src="https://lision.me/ios_native_js/html5.png"  alt="ex" /><text>Hello World!</text></body></html>'''
+
+    return HttpResponse(html)
+```
+
+
