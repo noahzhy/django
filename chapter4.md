@@ -58,7 +58,6 @@ from django.http import HttpResponse
 
 def index(request):
     html = '''<html><body><img style="width:256px;" src="https://lision.me/ios_native_js/html5.png"  alt="ex" /><text>Hello World!</text></body></html>'''
-
     return HttpResponse(html)
 ```
 
