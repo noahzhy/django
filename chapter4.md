@@ -51,6 +51,20 @@ python manage.py startapp index
 ```
 
 同上面的步骤，我们给这个 index 编写视图，并且将 URL 映射到 index 上。
+在 **`mysite/urls.py`** 文件的 **urlpatterns** 列表里插入一个 **include()**， 如下：
+
+```py
+from django.contrib import admin
+from django.urls import include, path
+
+urlpatterns = [
+	path('', include('index.urls')),
+	path('upload/', include('upload.urls')),
+    path('admin/', admin.site.urls),
+]
+```
+
+
 
 打开 **`index/views.py`**，把下面这些 Python 代码输入进去：
 ```py
