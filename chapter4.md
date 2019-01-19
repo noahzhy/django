@@ -44,14 +44,40 @@ python manage.py runserver
 
 通过上面的例子，我们不难发现 **`urlpatterns`** 负责将 URL 映射到我们需要的位置。
 
-我们继续新建一个名为 index 的应用，方便我们管理 index 页。
+现在，我们来为我们的网站创建首页，首先新建一个名为 index 的应用，方便我们管理 index 页。
 
 ```shell
 python manage.py startapp index
 ```
 
 同上面的步骤，我们给这个 index 编写视图，并且将 URL 映射到 index 上。
-在 **`mysite/urls.py`** 文件的 **urlpatterns** 列表里插入一个 **include()**， 如下：
+
+### 编写首页视图
+打开 **`index/views.py`**，把下面这些 Python 代码输入进去：
+```py
+from django.http import HttpResponse
+
+def index(request):
+    html = '''<html><body><img style="width:256px;" src="https://lision.me/ios_native_js/html5.png"  alt="ex" /><text>Hello World!</text></body></html>'''
+    return HttpResponse(html)
+```
+
+为了使我们的首页更加美观，插入了一张图片以及 Hello World! 的文字。
+
+
+### 创建 URLconf
+在 **`index`** 目录里新建一个 **`urls.py`** 文件。在 **`index/urls.py`** 中，输入如下代码：
+
+```py
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index'),
+]
+```
+
+并且在 **`mysite/urls.py`** 文件的 **urlpatterns** 列表里插入一个 **include()**， 如下：
 
 ```py
 from django.contrib import admin
@@ -64,17 +90,6 @@ urlpatterns = [
 ]
 ```
 
-打开 **`index/views.py`**，把下面这些 Python 代码输入进去：
-```py
-from django.http import HttpResponse
-
-def index(request):
-    html = '''<html><body><img style="width:256px;" src="https://lision.me/ios_native_js/html5.png"  alt="ex" /><text>Hello World!</text></body></html>'''
-    return HttpResponse(html)
-```
-
-为了使我们的首页更加美观，插入了一张图片以及 Hello World! 的文字。
-
-效果如下：
+最终效果如下：
 <img style="width:256px;" src="https://lision.me/ios_native_js/html5.png"  alt="ex" />
 <text>Hello World!</text>
