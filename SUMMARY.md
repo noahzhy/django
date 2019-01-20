@@ -6,4 +6,5 @@
 * [创建应用](chapter3.md)
 * [编写视图](chapter4.md)
 * [数据库配置](chapter5.md)
+* [静态与动态文件](chapter6.md)
 
