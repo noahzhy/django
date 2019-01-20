@@ -17,7 +17,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 ```
 
 ## 配置路由
-**`urls.py`** 中配置路由
+在 **`urls.py`** 中配置路由
 ```py
 from django.contrib import admin
 from django.urls import include, path
@@ -25,15 +25,17 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-	path('', include('index.urls')),
+    path('', include('index.urls')),
     path('admin/', admin.site.urls),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-
 ```
+关键在于这行代码 **`static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)`**
 
-## 动态文件设置
+## 文件具体说明
+
+### 动态文件设置
 **`MEDIA_ROOT`** 和 **`MEDIA_URL`** 代表的是用户上传后的文件保存的地方。可以理解为存放可变文件的文件夹。
 
 在 Django 的 **FileField** 和 **ImageField** 这样的 Model 类中，有 **`upload_to`** 参数可选。当 **`upload_to`** 设置相关的地址后，例如：
@@ -48,7 +50,7 @@ models.ImageField(upload_to = 'test_pictures')
 在本例子中，本机地址是：**`http://127.0.0.1/`**，**`MEDIA_URL`** 设置为 **`/uploads/`**
 那么通过：**`http://127.0.0.1:8000/uploads/文件名`** 就可以访问相关的上传图片或者其他文件。
 
-## 静态文件设置
+### 静态文件设置
 **`STATIC_ROOT`** 和 **`STATIC_URL`** 用于网站放置的**静态图片、CSS、JS** 等文件的地址。
 
 **`STATIC_URL`**，同 **`MEDIA_URL`** 类似；设置 **`STATIC_URL`** 为 **`/static/`** 后，通过：**`http://127.0.0.1:8000/static/文件名`** 就可以访问相应的静态文件了。
@@ -80,5 +82,5 @@ urlpatterns = [
     path('', include('index.urls')),
     path('admin/', admin.site.urls),
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 ```
