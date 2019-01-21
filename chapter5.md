@@ -22,4 +22,12 @@ CREATE TABLE myapp_person (
 需要注意的是：一个 id 字段会被自动添加，但是这种行为可以被改写。
 
 ## 使用模型
+一旦你定义了你的模型，你需要告诉 Django 你准备使用这些模型。你需要修改 **`settings.py`** 文件中的 **`INSTALLED_APPS`** ，在这个设置中添加包含你 **`models.py`** 文件的模块的名字。
+```py
+INSTALLED_APPS = [
+    #...
+    'myapp',
+    #...
+]
 
+```
