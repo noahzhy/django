@@ -84,3 +84,11 @@ urlpatterns = [
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 ```
+
+## 使用静态文件
+在你需要的文件路径中输入：
+```html
+<img src = "/static/文件名"/>
+```
+
+
